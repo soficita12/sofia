@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página educativa sobre la historia, cultura e importancia del pollo frito en Colombia. Información gastronómica sin fines comerciales." />
+  <meta name="keywords" content="pollo frito Colombia, gastronomía colombiana, historia pollo frito, cultura culinaria Colombia" />
+  <meta name="author" content="ANIBAL HUMBERTO HOLGIN AGUDELO" />
+  <meta name="robots" content="index, follow" />
+  <title>El Sabor del Pollo Frito Colombiano – Historia y Cultura Gastronómica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-deep:   #3b1f0a;
+      --brown-warm:   #7a3b10;
+      --amber:        #d97706;
+      --golden:       #f59e0b;
+      --cream:        #fdf6ec;
+      --cream-dark:   #f5e8d0;
+      --red-col:      #c0392b;
+      --yellow-col:   #f4d03f;
+      --blue-col:     #1a5276;
+      --text-dark:    #1c0e00;
+      --text-body:    #3d2b1a;
+      --text-muted:   #7c5c3e;
+      --border:       rgba(120, 80, 30, 0.18);
+      --radius:       12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-body);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* AVISO EDUCATIVO */
+    .edu-banner {
+      background: linear-gradient(135deg, #1a5276 0%, #2471a3 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+    .edu-banner strong { color: #f4d03f; }
+
+    /* NAV */
+    nav {
+      background: var(--brown-deep);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--golden);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--golden); }
+
+    /* HAMBURGER MOBILE */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--cream); margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, var(--brown-deep) 0%, var(--brown-warm) 55%, var(--amber) 100%);
+      color: var(--cream);
+      padding: 100px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1562967914-608f82629710?w=1400&h=700&fit=crop&auto=format') center/cover no-repeat;
+      opacity: 0.12;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--golden);
+      color: var(--brown-deep);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(42px, 7vw, 78px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 22px;
+      letter-spacing: -0.03em;
+    }
+    .hero h1 em { font-style: italic; color: var(--golden); }
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      max-width: 580px;
+      margin: 0 auto 36px;
+      opacity: 0.88;
+    }
+    .hero-meta {
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+      font-size: 13.5px; opacity: 0.7; margin-top: 16px;
+    }
+    .hero-meta span::before { content: '▸ '; color: var(--golden); }
+
+    /* SECCIONES GENERALES */
+    section { padding: 72px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--amber);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(30px, 4.5vw, 50px);
+      font-weight: 700;
+      color: var(--brown-deep);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .section-intro {
+      font-size: 17.5px;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 52px;
+      font-weight: 300;
+    }
+
+    /* LINEA DE TIEMPO */
+    .timeline-bg { background: var(--cream-dark); }
+    .timeline { position: relative; padding-left: 0; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--amber), var(--brown-warm));
+    }
+    .tl-item {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 48px;
+      align-items: flex-start;
+    }
+    .tl-dot {
+      flex-shrink: 0;
+      width: 58px; height: 58px;
+      background: var(--brown-deep);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--golden);
+      border: 3px solid var(--amber);
+      position: relative; z-index: 1;
+      text-align: center; line-height: 1.2;
+    }
+    .tl-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 8px;
+    }
+    .tl-body p { color: var(--text-body); font-size: 16px; }
+
+    /* IMPORTANCIA GRID */
+    .importance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+    .imp-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .imp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(60,20,5,0.1); }
+    .imp-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .imp-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 10px;
+    }
+    .imp-card p { font-size: 15.5px; color: var(--text-body); }
+
+    /* REGIONES */
+    .regions-bg { background: var(--brown-deep); color: var(--cream); }
+    .regions-bg .section-title { color: var(--golden); }
+    .regions-bg .section-intro { color: rgba(253,246,236,0.72); }
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .region-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: background 0.25s;
+    }
+    .region-card:hover { background: rgba(255,255,255,0.12); }
+    .region-img {
+      width: 100%; height: 180px;
+      object-fit: cover;
+      display: block;
+      background: var(--brown-warm);
+    }
+    .region-body { padding: 22px; }
+    .region-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      color: var(--golden);
+      margin-bottom: 8px;
+    }
+    .region-body p { font-size: 14.5px; opacity: 0.82; }
+
+    /* RECETA */
+    .recipe-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .recipe-img {
+      width: 100%; border-radius: var(--radius);
+      aspect-ratio: 4/3; object-fit: cover;
+      background: var(--cream-dark);
+      box-shadow: 0 16px 48px rgba(60,20,5,0.18);
+    }
+    .recipe-badge {
+      display: inline-block;
+      background: var(--golden);
+      color: var(--brown-deep);
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      padding: 4px 12px; border-radius: 100px;
+      margin-bottom: 18px;
+    }
+    .ingredients, .steps {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .ingredients li {
+      padding: 10px 14px;
+      background: var(--cream-dark);
+      border-radius: 8px;
+      font-size: 15px;
+      border-left: 3px solid var(--amber);
+    }
+    .steps li {
+      display: flex; gap: 14px;
+      font-size: 15.5px;
+    }
+    .steps li .step-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--brown-deep);
+      color: var(--golden);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+      margin-top: 2px;
+    }
+    .recipe-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 28px; }
+
+    /* CURIOSIDADES */
+    .facts-bg { background: linear-gradient(135deg, var(--amber) 0%, var(--golden) 100%); }
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .fact-card {
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .fact-number {
+      font-family: 'Fraunces', serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--brown-deep);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .fact-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brown-deep);
+      opacity: 0.8;
+    }
+    .facts-bg .section-title { color: var(--brown-deep); }
+    .facts-bg .section-label { color: var(--brown-deep); opacity: 0.7; }
+    .facts-bg .section-intro { color: var(--brown-deep); opacity: 0.75; }
+
+    /* POLITICAS */
+    .policies-bg { background: #f5f0ea; }
+    .policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .policy-block {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .policy-block h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      color: var(--brown-deep);
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .policy-block h3 .pico { font-size: 22px; }
+    .policy-block p, .policy-block li {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .policy-block ul { list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+
+    /* DISCLAIMER LEGAL */
+    .disclaimer {
+      background: #fff8e1;
+      border: 2px solid var(--golden);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 48px 0 0;
+    }
+    .disclaimer h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 16px;
+      color: var(--brown-deep);
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .disclaimer p { font-size: 14px; color: var(--text-body); line-height: 1.6; }
+
+    /* FOOTER */
+    footer {
+      background: var(--brown-deep);
+      color: var(--cream);
+      padding: 56px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 28px;
+    }
+    .footer-brand .brand-name {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--golden);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 14px; opacity: 0.65; line-height: 1.65; }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--golden);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      color: rgba(253,246,236,0.68);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--golden); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; opacity: 0.55; }
+    .footer-bottom .owner { color: var(--golden); font-weight: 600; opacity: 1; }
+
+    /* COLOMBIAN FLAG STRIPE */
+    .flag-stripe {
+      height: 6px;
+      background: linear-gradient(to right, var(--yellow-col) 33%, var(--blue-col) 33% 66%, var(--red-col) 66%);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--brown-deep); padding: 16px 24px; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .nav-inner { position: relative; }
+      .recipe-layout { grid-template-columns: 1fr; }
+      .policy-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .recipe-cols { grid-template-columns: 1fr; }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ANCHOR OFFSET */
+    [id] { scroll-margin-top: 70px; }
+  </style>
+</head>
+<body>
+
+<!-- AVISO EDUCATIVO SUPERIOR -->
+<div class="edu-banner">
+  ⚠️ <strong>AVISO IMPORTANTE:</strong> Esta página es de carácter <strong>EDUCATIVO E INFORMATIVO</strong>.
+  No está afiliada, patrocinada ni asociada con <strong>KFC</strong>, Kentucky Fried Chicken, Yum! Brands
+  ni ninguna otra cadena de comida rápida. Todos los derechos de las marcas mencionadas pertenecen a sus respectivos propietarios.
+</div>
+
+<!-- FRANJA BANDERA DE COLOMBIA -->
+<div class="flag-stripe"></div>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo">🍗 El Sabor del Pollo Frito Colombiano</a>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#importancia">Importancia</a></li>
+      <li><a href="#regiones">Regiones</a></li>
+      <li><a href="#receta">Receta</a></li>
+      <li><a href="#curiosidades">Curiosidades</a></li>
+      <li><a href="#politicas">Políticas</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content reveal">
+    <span class="hero-eyebrow">Gastronomía Colombiana</span>
+    <h1>La Historia del<br/><em>Pollo Frito</em><br/>en Colombia</h1>
+    <p class="hero-sub">
+      Un viaje por la cultura, las tradiciones y el sabor que convirtieron al pollo frito
+      en uno de los platos más queridos de la cocina colombiana.
+    </p>
+    <div class="hero-meta">
+      <span>Contenido educativo</span>
+      <span>Sin fines comerciales</span>
+      <span>Cultura gastronómica</span>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA - LÍNEA DE TIEMPO -->
+<section class="timeline-bg" id="historia">
+  <div class="container">
+    <p class="section-label reveal">Historia</p>
+    <h2 class="section-title reveal">El pollo frito a través del tiempo</h2>
+    <p class="section-intro reveal">
+      Desde las cocinas campesinas del Caribe hasta las ciudades modernas, el pollo frito
+      colombiano tiene una historia rica, llena de herencia cultural e influencias africanas,
+      indígenas y europeas.
+    </p>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot">S. XVI–<br/>XVII</div>
+        <div class="tl-body">
+          <h3>Las raíces coloniales y africanas</h3>
+          <p>Durante la colonia española, esclavos africanos traídos al Caribe colombiano trajeron consigo técnicas culinarias que incluían freír carne en aceite de palma o manteca. Esta práctica se fusionó con los ingredientes locales como el ají, el cilantro y la yuca, dando origen a preparaciones que aún hoy definen la cocina de la Costa Caribe.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">S. XIX</div>
+        <div class="tl-body">
+          <h3>El pollo criollo en las haciendas</h3>
+          <p>En las haciendas del interior colombiano, el pollo de corral era criado localmente y se convertía en protagonista de las festividades y celebraciones familiares. La fritura en calderos de barro o hierro, con manteca de cerdo y hierbas criollas, era un ritual culinario transmitido de generación en generación.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">1950s</div>
+        <div class="tl-body">
+          <h3>Industrialización y el pollo de granja</h3>
+          <p>Con la modernización agroindustrial de Colombia en los años 50, la producción avícola se masificó. Empresas como Incubadora Santander y otras compañías regionales comenzaron a industrializar la cría de pollos, haciendo que su carne fuera accesible a todas las clases sociales del país.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">1970s–<br/>1980s</div>
+        <div class="tl-body">
+          <h3>El auge de los restaurantes y fritangas</h3>
+          <p>En este período florecen las "fritangas" populares en todo el país: puestos y locales donde el pollo frito, la chicharrona, el chorizo y el morcón se venden a precios accesibles. En ciudades como Bogotá, Medellín, Cali y Barranquilla, estos locales se convierten en parte de la identidad gastronómica urbana.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">1990s</div>
+        <div class="tl-body">
+          <h3>Cadenas internacionales y el pollo colombiano resistente</h3>
+          <p>La llegada de cadenas de comida rápida internacionales al mercado colombiano generó una competencia con el pollo frito tradicional. Sin embargo, el pollo criollo colombiano —con sus marinados de ajo, comino, naranja agria y achiote— demostró tener una identidad propia que ninguna cadena transnacional pudo reemplazar.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2000s–<br/>Hoy</div>
+        <div class="tl-body">
+          <h3>Patrimonio gastronómico y reconocimiento internacional</h3>
+          <p>El pollo frito colombiano ha ganado reconocimiento internacional gracias al trabajo de chefs colombianos que reivindican la cocina tradicional. Hoy, preparaciones como el "pechuga a la plancha" barranquillera, el "pollo broaster" antioqueño o el "pollo en salsa criolla" son celebradas tanto dentro como fuera del país.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANCIA -->
+<section id="importancia">
+  <div class="container">
+    <p class="section-label reveal">Importancia Cultural y Social</p>
+    <h2 class="section-title reveal">¿Por qué el pollo frito es tan importante en Colombia?</h2>
+    <p class="section-intro reveal">
+      Más allá de ser un alimento, el pollo frito en Colombia representa identidad, economía familiar,
+      herencia cultural y cohesión comunitaria.
+    </p>
+    <div class="importance-grid">
+      <div class="imp-card reveal">
+        <span class="imp-icon">🫂</span>
+        <h3>Cohesión familiar y social</h3>
+        <p>El pollo frito es el centro de las reuniones familiares colombianas. Desde los domingos en familia hasta las fiestas patrias, este plato reúne a personas de todas las generaciones y clases sociales alrededor de una mesa.</p>
+      </div>
+      <div class="imp-card reveal">
+        <span class="imp-icon">💼</span>
+        <h3>Economía informal y empleo</h3>
+        <p>Miles de familias colombianas derivan su sustento de la venta de pollo frito en fritangas, puestos callejeros y restaurantes populares. Se estima que el sector avícola emplea a más de 200.000 personas de forma directa en el país.</p>
+      </div>
+      <div class="imp-card reveal">
+        <span class="imp-icon">🌿</span>
+        <h3>Herencia cultural afro e indígena</h3>
+        <p>Las técnicas de fritura y los condimentos usados en el pollo criollo colombiano son una viva expresión de la herencia afrodescendiente e indígena del país. El uso del achiote, el ají amarillo y la naranja agria son marcas de identidad irreemplazables.</p>
+      </div>
+      <div class="imp-card reveal">
+        <span class="imp-icon">🏭</span>
+        <h3>Industria avícola colombiana</h3>
+        <p>Colombia es uno de los mayores productores avícolas de América Latina. El sector genera más de 14 billones de pesos anuales al PIB nacional. El pollo es la proteína animal más consumida en Colombia, superando incluso a la carne bovina.</p>
+      </div>
+      <div class="imp-card reveal">
+        <span class="imp-icon">🎉</span>
+        <h3>Gastronomía festiva</h3>
+        <p>En festividades como el Carnaval de Barranquilla, la Feria de Cali o las fiestas de San Pedro en el Huila, el pollo frito es protagonista indiscutible. Cada región tiene su propia versión festiva del plato, enriquecida con sabores locales.</p>
+      </div>
+      <div class="imp-card reveal">
+        <span class="imp-icon">🍽️</span>
+        <h3>Accesibilidad y nutrición popular</h3>
+        <p>El pollo frito es una fuente proteica accesible para la mayoría de los colombianos. A diferencia de otras carnes más costosas, el pollo permite a las familias de menores ingresos acceder a una alimentación nutritiva y abundante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONES -->
+<section class="regions-bg" id="regiones">
+  <div class="container">
+    <p class="section-label reveal">Diversidad Regional</p>
+    <h2 class="section-title reveal">El pollo frito en cada rincón de Colombia</h2>
+    <p class="section-intro reveal">
+      Cada región colombiana tiene su propio estilo, condimentos y acompañamientos.
+      La diversidad geográfica del país se refleja en cada mordida.
+    </p>
+    <div class="regions-grid">
+      <div class="region-card reveal">
+        <img class="region-img"
+          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=360&fit=crop&auto=format"
+          alt="Región Caribe colombiana - Barranquilla y sus platos típicos" />
+        <div class="region-body">
+          <h3>Costa Caribe</h3>
+          <p>En Barranquilla y Cartagena, el pollo se marina con naranja agria, ajo, comino y achiote durante toda la noche. Se fríe en manteca hasta quedar crujiente y dorado, acompañado de arroz con coco y patacones.</p>
+        </div>
+      </div>
+      <div class="region-card reveal">
+        <img class="region-img"
+          src="https://images.unsplash.com/photo-1551183053-bf91798d4b1d?w=600&h=360&fit=crop&auto=format"
+          alt="Antioquia - Medellín gastronomía paisa" />
+        <div class="region-body">
+          <h3>Antioquia y Eje Cafetero</h3>
+          <p>La tradición paisa incluye el famoso "pollo broaster", crujiente y jugoso, servido con papas a la francesa y ensalada. En ferias y fondas típicas, el pollo al ajillo y el sancocho de gallina son infaltables.</p>
+        </div>
+      </div>
+      <div class="region-card reveal">
+        <img class="region-img"
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=360&fit=crop&auto=format"
+          alt="Valle del Cauca - Cali gastronomía vallecaucana" />
+        <div class="region-body">
+          <h3>Valle del Cauca</h3>
+          <p>Cali es reconocida por el "chuleta valluna" y el pollo en diferentes preparaciones. Las "fritangas" caleñas, cargadas de influencia afropacífica, usan combinaciones únicas de especias y el inigualable "hogao" como salsa base.</p>
+        </div>
+      </div>
+      <div class="region-card reveal">
+        <img class="region-img"
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=360&fit=crop&auto=format"
+          alt="Bogotá - gastronomía capitalina colombiana" />
+        <div class="region-body">
+          <h3>Bogotá y Cundinamarca</h3>
+          <p>La capital colombiana es un crisol gastronómico. Aquí conviven tradiciones de todas las regiones del país. El "pollo en salsa" y el "pollo asado con papa criolla" son clásicos de los restaurantes de barrio bogotanos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECETA TRADICIONAL -->
+<section id="receta">
+  <div class="container">
+    <div class="recipe-layout">
+      <div>
+        <img class="recipe-img"
+          src="https://images.unsplash.com/photo-1562967914-608f82629710?w=700&h=525&fit=crop&auto=format"
+          alt="Pollo frito crujiente dorado estilo colombiano tradicional" />
+      </div>
+      <div>
+        <span class="recipe-badge">Receta Tradicional</span>
+        <p class="section-label">Gastronomía</p>
+        <h2 class="section-title">Pollo frito criollo colombiano</h2>
+        <p style="color:var(--text-muted); margin-bottom:28px; font-size:15.5px;">
+          Una receta auténtica transmitida de generación en generación, con los sabores
+          más representativos de la cocina colombiana tradicional.
+        </p>
+        <div class="recipe-cols">
+          <div>
+            <p style="font-family:'Fraunces',serif; font-size:16px; font-weight:700; color:var(--brown-deep); margin-bottom:12px;">Ingredientes</p>
+            <ul class="ingredients">
+              <li>1 pollo entero cortado en presas</li>
+              <li>Jugo de 3 naranjas agrias</li>
+              <li>6 dientes de ajo machacados</li>
+              <li>1 cdta. de comino molido</li>
+              <li>1 cdta. de achiote (bija)</li>
+              <li>Sal y pimienta negra al gusto</li>
+              <li>Cilantro y cebolla larga</li>
+              <li>Aceite vegetal para freír</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-family:'Fraunces',serif; font-size:16px; font-weight:700; color:var(--brown-deep); margin-bottom:12px;">Acompañamientos</p>
+            <ul class="ingredients">
+              <li>Arroz blanco con coco</li>
+              <li>Patacones (plátano verde frito)</li>
+              <li>Ensalada criolla</li>
+              <li>Aguacate fresco</li>
+              <li>Ají casero</li>
+            </ul>
+          </div>
+        </div>
+        <p style="font-family:'Fraunces',serif; font-size:16px; font-weight:700; color:var(--brown-deep); margin-bottom:16px;">Preparación</p>
+        <ol class="steps">
+          <li><span class="step-num">1</span><span>Marine las presas en la mezcla de naranja agria, ajo, comino, achiote, sal y pimienta durante mínimo 4 horas (idealmente toda la noche en refrigeración).</span></li>
+          <li><span class="step-num">2</span><span>Retire el pollo del marinado y deje escurrir el exceso de líquido. Puede enharinar ligeramente si desea una costra más crujiente.</span></li>
+          <li><span class="step-num">3</span><span>Caliente aceite vegetal abundante en un caldero hondo a fuego medio-alto (175°C). Fría las presas por partes sin amontonarlas.</span></li>
+          <li><span class="step-num">4</span><span>Cocine por 12–15 minutos por cada lado hasta que la piel esté dorada y crujiente y el interior esté completamente cocido.</span></li>
+          <li><span class="step-num">5</span><span>Sirva inmediatamente con arroz de coco, patacones, aguacate y una buena porción de ají criollo casero.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURIOSIDADES / DATOS -->
+<section class="facts-bg" id="curiosidades">
+  <div class="container">
+    <p class="section-label reveal">Datos y Curiosidades</p>
+    <h2 class="section-title reveal">El pollo frito colombiano en cifras</h2>
+    <p class="section-intro reveal">
+      La industria avícola y la cultura gastronómica del pollo en Colombia tienen dimensiones
+      que pocos conocen.
+    </p>
+    <div class="facts-grid">
+      <div class="fact-card reveal">
+        <div class="fact-number">37 kg</div>
+        <p class="fact-label">Consumo de pollo per cápita anual en Colombia (2023)</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-number">#1</div>
+        <p class="fact-label">Proteína animal más consumida en Colombia</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-number">200K+</div>
+        <p class="fact-label">Empleos directos en la industria avícola colombiana</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-number">500+</div>
+        <p class="fact-label">Años de historia del pollo frito en tierras colombianas</p>
+      </div>
+    </div>
+    <div style="margin-top:48px; background:rgba(255,255,255,0.3); border-radius:var(--radius); padding:28px 32px; border:1px solid rgba(255,255,255,0.4);">
+      <p style="font-family:'Fraunces',serif; font-size:18px; font-weight:700; color:var(--brown-deep); margin-bottom:12px;">¿Sabías que...?</p>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+        <li style="font-size:15px; color:var(--brown-deep); display:flex; gap:10px;"><span>🌶️</span><span>El ají amarillo y el ají dulce son ingredientes fundamentales en el marinado del pollo costeño colombiano, imposibles de sustituir para los conocedores del sabor auténtico.</span></li>
+        <li style="font-size:15px; color:var(--brown-deep); display:flex; gap:10px;"><span>🇨🇴</span><span>El Carnaval de Barranquilla, Patrimonio Cultural Inmaterial de la Humanidad según la UNESCO, tiene al pollo frito como uno de sus alimentos más representativos en los días de celebración.</span></li>
+        <li style="font-size:15px; color:var(--brown-deep); display:flex; gap:10px;"><span>🌿</span><span>El uso del achiote (o bija) en el pollo colombiano proviene de tradiciones indígenas precolombinas. Este colorante natural de tonos rojizos también tiene propiedades antioxidantes documentadas.</span></li>
+        <li style="font-size:15px; color:var(--brown-deep); display:flex; gap:10px;"><span>🏆</span><span>Varios chefs colombianos han llevado preparaciones de pollo criollo a competencias internacionales de gastronomía, obteniendo reconocimiento por la riqueza de los sabores colombianos.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- POLÍTICAS Y AVISO LEGAL -->
+<section class="policies-bg" id="politicas">
+  <div class="container">
+    <p class="section-label reveal">Marco Legal</p>
+    <h2 class="section-title reveal">Políticas y Términos de uso</h2>
+    <p class="section-intro reveal">
+      Esta página cumple con las políticas de contenido de Google, las normas colombianas de
+      comunicación digital y opera con total transparencia respecto a su naturaleza educativa.
+    </p>
+    <div class="policy-grid">
+      <div class="policy-block reveal">
+        <h3><span class="pico">📜</span> Propósito y Naturaleza del Sitio</h3>
+        <p>Esta página web tiene exclusivamente fines educativos e informativos. El contenido publicado busca divulgar información cultural, histórica y gastronómica sobre el pollo frito en Colombia, sin ninguna intención comercial, promocional o publicitaria de productos o marcas específicas.</p>
+      </div>
+      <div class="policy-block reveal">
+        <h3><span class="pico">🚫</span> Desvinculación de Marcas Registradas</h3>
+        <p>Este sitio <strong>NO está afiliado, patrocinado, asociado ni respaldado</strong> por KFC (Kentucky Fried Chicken), Yum! Brands Inc., Pollo Campero, Kokoriko ni ninguna otra cadena o empresa del sector. Cualquier mención de marcas comerciales se hace con fines puramente referenciales y educativos bajo el principio de uso referencial permitido.</p>
+      </div>
+      <div class="policy-block reveal">
+        <h3><span class="pico">🔒</span> Política de Privacidad</h3>
+        <ul>
+          <li>Este sitio no recopila datos personales de sus visitantes.</li>
+          <li>No se utilizan cookies de seguimiento comercial.</li>
+          <li>No se comparte información con terceros con fines comerciales.</li>
+          <li>Las imágenes utilizadas provienen de fuentes con licencia abierta (Unsplash).</li>
+          <li>El propietario respeta y cumple la Ley 1581 de 2012 de protección de datos personales de Colombia.</li>
+        </ul>
+      </div>
+      <div class="policy-block reveal">
+        <h3><span class="pico">📋</span> Derechos de Autor y Contenido</h3>
+        <ul>
+          <li>El contenido editorial es original y de autoría del propietario del sitio.</li>
+          <li>Queda permitida la cita parcial del contenido con atribución debida al sitio.</li>
+          <li>Se prohíbe la reproducción total sin autorización escrita del propietario.</li>
+          <li>Las fuentes consultadas incluyen publicaciones académicas, Ministerio de Cultura de Colombia y FENAVI.</li>
+          <li>Las imágenes están bajo licencia Unsplash y son de libre uso.</li>
+        </ul>
+      </div>
+      <div class="policy-block reveal">
+        <h3><span class="pico">📢</span> Política Publicitaria</h3>
+        <p>En caso de contener publicidad, este sitio cumple con todas las políticas de Google AdSense y Google Ads: el contenido es apto para todas las edades, no contiene información engañosa, no promueve productos prohibidos y toda publicidad está claramente diferenciada del contenido editorial. La publicidad no interfiere con la experiencia del usuario.</p>
+      </div>
+      <div class="policy-block reveal">
+        <h3><span class="pico">⚖️</span> Marco Legal Aplicable</h3>
+        <ul>
+          <li>Ley 527 de 1999 – Comercio electrónico en Colombia</li>
+          <li>Ley 1581 de 2012 – Protección de datos personales</li>
+          <li>Ley 23 de 1982 – Derechos de autor</li>
+          <li>Decreto 1377 de 2013 – Habeas data</li>
+          <li>Políticas de Contenido de Google AdSense 2024</li>
+          <li>Resolución CRC sobre contenidos digitales</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER LEGAL -->
+    <div class="disclaimer reveal">
+      <h4>⚠️ Aviso Legal Completo</h4>
+      <p>
+        <strong>El Sabor del Pollo Frito Colombiano</strong> es una página web de contenido educativo y cultural
+        propiedad de <strong>ANIBAL HUMBERTO HOLGIN AGUDELO</strong>, ciudadano colombiano.
+        Esta página <strong>NO tiene ningún tipo de afiliación, patrocinio, respaldo ni relación comercial</strong>
+        con KFC (Kentucky Fried Chicken), Yum! Brands, Pollo Campero, Kokoriko, ni con ninguna cadena o empresa de
+        restauración. Las marcas comerciales mencionadas en el contenido educativo son propiedad exclusiva de sus
+        respectivos titulares. Toda la información publicada en este sitio proviene de fuentes públicas, académicas
+        y culturales, y tiene como único propósito la divulgación del patrimonio gastronómico colombiano.
+        El contenido cumple con las <strong>Políticas de Programa de Google AdSense</strong>, incluyendo las normas
+        sobre contenido de calidad, transparencia y experiencia de usuario.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="brand-name">🍗 El Sabor del Pollo Frito Colombiano</p>
+        <p>Página web educativa sobre la historia, cultura e importancia gastronómica del pollo frito en Colombia. Sin fines comerciales ni afiliaciones con marcas registradas.</p>
+        <p style="margin-top:16px; font-size:13px; opacity:0.5;">Propietario: <strong style="color:var(--golden); opacity:1;">ANIBAL HUMBERTO HOLGIN AGUDELO</strong></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#importancia">Importancia</a></li>
+          <li><a href="#regiones">Regiones</a></li>
+          <li><a href="#receta">Receta Tradicional</a></li>
+          <li><a href="#curiosidades">Curiosidades</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#politicas">Políticas de Uso</a></li>
+          <li><a href="#politicas">Privacidad</a></li>
+          <li><a href="#politicas">Derechos de Autor</a></li>
+          <li><a href="#politicas">Aviso Legal</a></li>
+          <li><a href="#politicas">Publicidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024–2026 <span class="owner">ANIBAL HUMBERTO HOLGIN AGUDELO</span>. Todos los derechos reservados.</p>
+      <p>Página educativa · Colombia 🇨🇴 · Contenido apto para todo público</p>
+    </div>
+  </div>
+</footer>
+<div class="flag-stripe"></div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Cerrar menú al hacer clic en un enlace (móvil)
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(function(el) { observer.observe(el); });
+
+  // Ocultar scrollbars mientras no se scrollea
+  var scrollTimer;
+  document.documentElement.style.setProperty('overflow', 'auto');
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimer);
+    document.body.style.overflowY = 'scroll';
+    scrollTimer = setTimeout(function() {
+      document.body.style.overflowY = 'auto';
+    }, 800);
+  });
+</script>
+</body>
+</html>
